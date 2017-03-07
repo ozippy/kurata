@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ng2-bootstrap';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductFilterPipe } from './product-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductFilterPipe
   ],
   imports: [
     BrowserModule,
