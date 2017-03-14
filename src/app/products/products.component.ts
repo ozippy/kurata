@@ -11,6 +11,7 @@ import { IProduct } from './product';
 
 
 export class ProductsComponent implements OnInit {
+  errorMessage: any;
 
   pageTitle: string = 'Product List!';
   imageWidth: number = 50;
@@ -25,7 +26,9 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.products = this._productService.getProducts();
+    this._productService.getProducts()
+      .subscribe(products => this.products = products,
+      error => this.errorMessage = <any>error);
   }
 
   toggleImage(): void {
